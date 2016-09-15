@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact List</title>
+
+  <script   src="//code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">My Contact List</h1>
+    </div>
+
+  <div class="row text-center userBox">
+    <form class="form-inline" id='newContactForm'>
+      <div class="form-group col-xs-6 input-box">
+        <label for="newName">Name</label>
+        <input type="text" class="form-control" id="newName" placeholder="John Smith" required>
+      </div>
+      <div class="form-group col-xs-6 input-box">
+        <label for="newNumber">Phone Number</label>
+        <input type="tel" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}' class="form-control" id="newNumber" placeholder="(xxx)xxx-xxxx">
+      </div>
+      <div class="form-group col-xs-6 input-box">
+        <label for="newEmail">Email</label>
+        <input type="text" class="form-control" id="newEmail" placeholder="MrSmith@moogle.com">
+      </div>
+      <div class="form-group col-xs-6 input-box">
+        <label for="newSkype">Skype Handle</label>
+        <input type="text" class="form-control" id="newSkype" placeholder="Skype Username">
+      </div>
+      <div class="row text-center col-xs-12 addButton-box">
+        <button class="btn btn-default btn-primary add">Add to Contacts</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Skype Handle</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id='contactList'>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+  <!-- Ghost Table -->
+  <table class="hidden">
+    <tbody>
+      <tr id="ghostRow">
+        <td class="name"></td>
+        <td class="email"></td>
+        <td class="number"></td>
+        <td class="skype"></td>
+        <td>
+          <button class="btn btn-medium btn-info edit">Edit</button>
+          <button class="btn btn-medium btn-success done hidden">Done</button>
+        </td>
+        <td>
+          <button class="btn btn-sm btn-danger delete">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
